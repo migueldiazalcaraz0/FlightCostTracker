@@ -22,7 +22,9 @@ class FlightSearch:
 
     }
     )   
-        print(results["other_flights"][0])
         top = results["other_flights"][0]
+        name = top["flights"][-1]["arrival_airport"]["name"]
+        print(name)
+        print(f"Price for flight ${top["price"]} lowest price yet!")
 
         return top["price"]

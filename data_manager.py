@@ -19,6 +19,9 @@ class DataManager:
     def addprice(self,row_id,price):
         body = {"sheet1":{"lowestPrice":price}}
         response = requests.put(url=f"{self.url}/{row_id}",json=body)
+    
+    def addlocation(self):
+        
 
 
 

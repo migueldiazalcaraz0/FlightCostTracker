@@ -10,17 +10,36 @@ from flight_search import FlightSearch
 load_dotenv()
 
 
+def check_pricing():
+    print("Welcome User To Pricecheck version 1.0 what would you like to do today?")
+    print("1. Check Pricing for all locations")
+    print("2. Add a new location")
+    answer = int(input())
+    if answer == 1:
+        dm = DataManager()
+        code = dm.locations()
+        search = FlightSearch()
+        print("Loading...")
+        results = search.search(code)
+        addprice = dm.addprice(2,results)
+    elif answer ==2:
+        city = input("Enter City of Intrest: ")
+        iata = input("iATA Code: ")
+        default_price =  0 
+        dm.addlocation(city,iata,default_price)
 
 
 
-dm = DataManager()
-code = dm.locations()
 
 
-search = FlightSearch()
-results = search.search(code)
+check_pricing()
+# dm = DataManager()
+# code = dm.locations()
 
 
-addprice = dm.addprice(3,results)
+# search = FlightSearch()
+# results = search.search(code)
+
+
 
 # print(code)
