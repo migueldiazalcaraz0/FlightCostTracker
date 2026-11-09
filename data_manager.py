@@ -20,8 +20,11 @@ class DataManager:
         body = {"sheet1":{"lowestPrice":price}}
         response = requests.put(url=f"{self.url}/{row_id}",json=body)
     
-    def addlocation(self):
-        
+    def addlocation(self,city,iata_code,lowestPrice):
+        body = {"sheet1":{"city":city,"iataCode":iata_code,"lowestPrice":lowestPrice}}
+        response =requests.post(url=self.url,json=body)
+        print(response)
+
 
 
 

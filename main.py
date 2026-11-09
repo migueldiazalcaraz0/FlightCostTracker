@@ -26,7 +26,10 @@ def check_pricing():
         city = input("Enter City of Intrest: ")
         iata = input("iATA Code: ")
         default_price =  0 
+        dm = DataManager()
         dm.addlocation(city,iata,default_price)
+        print("Added Succesfuly! Run option 1 for pricing!")
+
 
 
 
