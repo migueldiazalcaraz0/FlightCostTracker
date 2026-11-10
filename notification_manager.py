@@ -1,5 +1,7 @@
 import requests 
 
 class NotificationManager:
-    #This class is responsible for sending notifications with the deal flight details.
+    #Not trying to pay for an API for practice but otherwisew would of been used
+
+    
     pass
