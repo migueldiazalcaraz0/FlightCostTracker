@@ -17,11 +17,12 @@ def check_pricing():
     answer = int(input())
     if answer == 1:
         dm = DataManager()
-        code = dm.locations()
+        rows = dm.locations()
         search = FlightSearch()
         print("Loading...")
-        results = search.search(code)
-        addprice = dm.addprice(2,results)
+        for row_id,code in rows:
+            price = search.search(code)
+            dm.addprice(row_id,price)
     elif answer ==2:
         city = input("Enter City of Intrest: ")
         iata = input("iATA Code: ")
@@ -29,6 +30,8 @@ def check_pricing():
         dm = DataManager()
         dm.addlocation(city,iata,default_price)
         print("Added Succesfuly! Run option 1 for pricing!")
+    else:
+        print("good bye jackass")
 
 
 

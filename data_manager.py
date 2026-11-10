@@ -12,9 +12,11 @@ class DataManager:
         location = requests.get(url=self.url)
         result = location.json()
         # ex = result["city"]
-        flocation = result["sheet1"][0]["iataCode"]
+        list__locations = []
+        for row in result["sheet1"]:
+            list__locations.append((row["id"],row["iataCode"]))
 
-        return flocation 
+        return list__locations 
 
     def addprice(self,row_id,price):
         body = {"sheet1":{"lowestPrice":price}}
@@ -25,7 +27,10 @@ class DataManager:
         response =requests.post(url=self.url,json=body)
         print(response)
 
+    def removelocation():
+        pass
 
+        
 
 
 
